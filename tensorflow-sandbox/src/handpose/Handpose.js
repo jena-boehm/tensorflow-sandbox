@@ -2,6 +2,7 @@ import React, {useRef} from 'react'
 import * as tf from '@tensorflow/tfjs';
 import * as handpose from '@tensorflow-models/handpose';
 import Webcam from 'react-webcam';
+import { drawHand } from './utils';
 
 export default function Handpose() {
     const webcamRef = useRef(null);
@@ -44,6 +45,8 @@ export default function Handpose() {
         console.log(hand);  
 
         //draw mesh
+        const ctx = canvasRef.current.getContext('2d');
+        drawHand(hand, ctx)
     }
 }
 

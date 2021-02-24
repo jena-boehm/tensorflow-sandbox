@@ -1,5 +1,4 @@
 //Triangulation metrics
-
 export const TRIANGULATION = [
     127,
     34,
